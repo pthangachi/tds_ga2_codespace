@@ -1,0 +1,30 @@
+{
+    // Required name
+    "name": "ga2-fba29b",
+    
+    // Base image and features for the deployment tooling stack
+    "image": "mcr.microsoft.com/devcontainers/universal:latest",
+    
+    "features": {
+        // Required Python feature installation
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.11"
+        }
+    },
+    
+    // Required VS Code extensions for smoother onboarding
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "astral-sh.uv",
+                "ms-python.python"
+            ]
+        }
+    },
+    
+    // Required post-create command to prime dependencies using uv
+    "postCreateCommand": "pip install uv && uv pip install -r requirements.txt",
+    
+    // Optional: Forward the application port if you were running FastAPI
+    "forwardPorts": [8000]
+}
