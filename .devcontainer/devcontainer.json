@@ -23,7 +23,7 @@
     },
     
     // Required post-create command to prime dependencies using uv
-    "postCreateCommand": "pip install uv && uv pip install -r requirements.txt",
+    "postCreateCommand": "pip install uv && uv pip install fastapi",
     
     // Optional: Forward the application port if you were running FastAPI
     "forwardPorts": [8000]
